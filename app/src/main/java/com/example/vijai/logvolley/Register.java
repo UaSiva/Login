@@ -68,17 +68,18 @@ public class Register extends AppCompatActivity {
                                 if(code.equals("reg_success")){
                                     Toast.makeText(getApplicationContext(),code,Toast.LENGTH_SHORT).show();
 
-                                    finish();
+                                    //finish();
 
                                 }
                                 if(code.equals("reg_failed")){
+                                    Toast.makeText(getApplicationContext(),code,Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getApplicationContext(),message,Toast.LENGTH_SHORT).show();
+
                                     Name.setText("");
                                     Email.setText("");
                                     UserName.setText("");
                                     Password.setText("");
                                     ConPassword.setText("");
-                                    Toast.makeText(getApplicationContext(),code,Toast.LENGTH_SHORT).show();
-                                    Toast.makeText(getApplicationContext(),message,Toast.LENGTH_SHORT).show();
 
 
                                 }
@@ -104,7 +105,7 @@ public class Register extends AppCompatActivity {
                 }
             };
 
-            //MySingleton.getInstance(Register.this).addToRequestQueue(stringRequest);
+
             Volley.newRequestQueue(this).add(stringRequest);
         }
 
